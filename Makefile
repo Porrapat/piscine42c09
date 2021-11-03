@@ -23,6 +23,7 @@ build-sample: compile
 	-./test_ex02_ft_split "aaa,bbb,ccc ddd,eee" ", " > result_sample_ex02_ft_split_case_3.txt
 	-./test_ex02_ft_split "ImtmVrV6Ov8QrkGGUglBy7Vgsu iIsdl5XyT35Czv4xeu" "yenORYQ" > result_sample_ex02_ft_split_case_4.txt
 	-./test_ex02_ft_split "SJLoauIorpGcYMqTxOURsOVhv6P9gQB" "4JTWPF" > result_sample_ex02_ft_split_case_5.txt
+	-./test_ex02_ft_split "ahndmogPrPMOYdq8cMiedFXINbb2USdhwyidNv0 9T" "hRf" > result_sample_ex02_ft_split_case_6.txt
 
 run:	compile
 	-./test_ex02_ft_split "aaa,bbb,ccc" "," > result_current_ex02_ft_split_case_1.txt
@@ -30,6 +31,7 @@ run:	compile
 	-./test_ex02_ft_split "aaa,bbb,ccc ddd,eee" ", " > result_current_ex02_ft_split_case_3.txt
 	-./test_ex02_ft_split "ImtmVrV6Ov8QrkGGUglBy7Vgsu iIsdl5XyT35Czv4xeu" "yenORYQ" > result_current_ex02_ft_split_case_4.txt
 	-./test_ex02_ft_split "SJLoauIorpGcYMqTxOURsOVhv6P9gQB" "4JTWPF" > result_current_ex02_ft_split_case_5.txt
+	-./test_ex02_ft_split "ahndmogPrPMOYdq8cMiedFXINbb2USdhwyidNv0 9T" "hRf" > result_current_ex02_ft_split_case_6.txt
 
 all:	norminette	compile run
 
@@ -39,6 +41,7 @@ test:	all
 	-diff result_current_ex02_ft_split_case_3.txt result_sample_ex02_ft_split_case_3.txt
 	-diff result_current_ex02_ft_split_case_4.txt result_sample_ex02_ft_split_case_4.txt
 	-diff result_current_ex02_ft_split_case_5.txt result_sample_ex02_ft_split_case_5.txt
+	-diff result_current_ex02_ft_split_case_6.txt result_sample_ex02_ft_split_case_6.txt
 
 clean:
 	-rm -rf */*.a
