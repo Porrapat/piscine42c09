@@ -18,10 +18,18 @@ compile: norminette
 	-gcc ./ex02/ft_split.c test_ex02_ft_split.c -Wall -Werror -Wextra -o test_ex02_ft_split
 
 build-sample: compile
-	-./test_ex02_ft_split "aaa,bbb,ccc" "," > result_sample_ex02_ft_split.txt
+	-./test_ex02_ft_split "aaa,bbb,ccc" "," > result_sample_ex02_ft_split_case_1.txt
+	-./test_ex02_ft_split "aaa,bbb,ccc ddd,eee" "," > result_sample_ex02_ft_split_case_2.txt
+	-./test_ex02_ft_split "aaa,bbb,ccc ddd,eee" ", " > result_sample_ex02_ft_split_case_3.txt
+	-./test_ex02_ft_split "ImtmVrV6Ov8QrkGGUglBy7Vgsu iIsdl5XyT35Czv4xeu" "yenORYQ" > result_sample_ex02_ft_split_case_4.txt
+	-./test_ex02_ft_split "SJLoauIorpGcYMqTxOURsOVhv6P9gQB" "4JTWPF" > result_sample_ex02_ft_split_case_5.txt
 
 run:	compile
-	-./test_ex02_ft_split "aaa,bbb,ccc" "," > result_current_ex02_ft_split.txt
+	-./test_ex02_ft_split "aaa,bbb,ccc" "," > result_current_ex02_ft_split_case_1.txt
+	-./test_ex02_ft_split "aaa,bbb,ccc ddd,eee" "," > result_current_ex02_ft_split_case_2.txt
+	-./test_ex02_ft_split "aaa,bbb,ccc ddd,eee" ", " > result_current_ex02_ft_split_case_3.txt
+	-./test_ex02_ft_split "ImtmVrV6Ov8QrkGGUglBy7Vgsu iIsdl5XyT35Czv4xeu" "yenORYQ" > result_current_ex02_ft_split_case_4.txt
+	-./test_ex02_ft_split "SJLoauIorpGcYMqTxOURsOVhv6P9gQB" "4JTWPF" > result_current_ex02_ft_split_case_5.txt
 
 all:	norminette	compile run
 

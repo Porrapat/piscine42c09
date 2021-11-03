@@ -1,4 +1,5 @@
-count occ: 2
+Case: "aaa,bbb,ccc" ","
+------------------
 tab start
 tab[0]: $aaa$
 tab[1]: $bbb$
