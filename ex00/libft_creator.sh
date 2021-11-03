@@ -7,9 +7,17 @@ echo "===== norminette -v ========="
 norminette -v
 echo "===== lsb_release -a ========="
 lsb_release -a
+echo "===== xcode-select -p ========="
+lsb_release -a
+echo "===== uname -a ========="
+uname -a
+echo "===== uname -m ========="
+uname -m
 echo "===== hostnamectl ========="
 hostnamectl
 echo "===== gcc -v ========="
 gcc -v
+echo "===== clang -v ========="
+clang -v
 echo "===== printenv ========="
 printenv
