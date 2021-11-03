@@ -14,34 +14,26 @@ norminette:
 	-norminette ./ex02/ft_split.c
 
 compile: norminette
-	-gcc ./ex00/ft_strlen.c test_ex00_ft_strlen.c -Wall -Werror -Wextra -o test_ex00_ft_strlen
-	-gcc ./ex01/ft_putstr.c test_ex01_ft_putstr.c -Wall -Werror -Wextra -o test_ex01_ft_putstr
-	-gcc ./ex02/ft_putnbr.c test_ex02_ft_putnbr.c -Wall -Werror -Wextra -o test_ex02_ft_putnbr
+	-./ex00/libft_creator.sh
+	-gcc ./ex02/ft_split.c test_ex02_ft_split.c -Wall -Werror -Wextra -o test_ex02_ft_split
 
 build-sample: compile
-	-./test_ex00_ft_strlen > result_sample_ex00_ft_strlen.txt
-	-./test_ex01_ft_putstr > result_sample_ex01_ft_putstr.txt
-	-./test_ex02_ft_putnbr > result_sample_ex02_ft_putnbr.txt
+	-./test_ex02_ft_split "aaa,bbb,ccc" "," > result_sample_ex02_ft_split.txt
 
 run:	compile
-	-./test_ex00_ft_strlen > result_current_ex00_ft_strlen.txt
-	-./test_ex01_ft_putstr > result_current_ex01_ft_putstr.txt
-	-./test_ex02_ft_putnbr > result_current_ex02_ft_putnbr.txt
+	-./test_ex02_ft_split "aaa,bbb,ccc" "," > result_current_ex02_ft_split.txt
 
 all:	norminette	compile run
 
 test:	all
-	-diff result_current_ex00_ft_strlen.txt result_sample_ex00_ft_strlen.txt
-	-diff result_current_ex01_ft_putstr.txt result_sample_ex01_ft_putstr.txt
-	-diff result_current_ex02_ft_putnbr.txt result_sample_ex02_ft_putnbr.txt
+	-diff result_current_ex02_ft_split.txt result_sample_ex02_ft_split.txt
 
 clean:
+	-rm -rf */*.a
+	-rm -rf libft.a
 	-rm -rf */*.out
 	-rm -rf result_current_ex*.txt
-	-rm test_ex00_ft_strlen
-	-rm test_ex01_ft_putstr
-	-rm test_ex02_ft_putnbr
-
+	-rm test_ex02_ft_split
 
 clean-sample:
 	-rm -rf result_sample_ex*.txt
