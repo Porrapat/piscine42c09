@@ -28,7 +28,7 @@ bool	is_char_in_string(char c, char *set)
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int index;
+	unsigned int	index;
 
 	index = 0;
 	while (index < n && src[index] != '\0')
@@ -44,7 +44,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	return (dest);
 }
 
-int		count_occur(char *str, char *charset)
+int	count_occur(char *str, char *charset)
 {
 	int		count;
 	char	*previous;
@@ -67,7 +67,7 @@ int		count_occur(char *str, char *charset)
 	return (count);
 }
 
-int		add_part(char **entry, char *previous, int size, char *charset)
+int	add_part(char **entry, char *previous, int size, char *charset)
 {
 	if (is_char_in_string(previous[0], charset))
 	{
@@ -97,7 +97,8 @@ char	**ft_split(char *str, char *charset)
 	{
 		if (is_char_in_string(*str, charset))
 			next = str;
-		if ((size = next - previous) > 1)
+		size = next - previous;
+		if (size > 1)
 			index += add_part(&array[index], previous, size, charset);
 		if (*str == '\0')
 			break ;
