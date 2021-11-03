@@ -34,7 +34,11 @@ run:	compile
 all:	norminette	compile run
 
 test:	all
-	-diff result_current_ex02_ft_split.txt result_sample_ex02_ft_split.txt
+	-diff result_current_ex02_ft_split_case_1.txt result_sample_ex02_ft_split_case_1.txt
+	-diff result_current_ex02_ft_split_case_2.txt result_sample_ex02_ft_split_case_2.txt
+	-diff result_current_ex02_ft_split_case_3.txt result_sample_ex02_ft_split_case_3.txt
+	-diff result_current_ex02_ft_split_case_4.txt result_sample_ex02_ft_split_case_4.txt
+	-diff result_current_ex02_ft_split_case_5.txt result_sample_ex02_ft_split_case_5.txt
 
 clean:
 	-rm -rf */*.a
